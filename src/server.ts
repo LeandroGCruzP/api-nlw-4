@@ -14,4 +14,4 @@ app.post("/", (request, response) => {
 
 app.listen(3333, () => console.log("Server is running"));
 
-// Dia 2: 18:14
+// Aula 2: 37:21
