@@ -9,6 +9,10 @@ const usersController = new UsersController();
 const surveysController = new SurveysController();
 
 router.post("/users", usersController.create);
+
 router.post("/surveys", surveysController.create);
+router.get("/surveys", surveysController.show);
 
 export { router };
+
+// Aula 3: 20:48
