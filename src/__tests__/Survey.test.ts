@@ -30,5 +30,3 @@ describe("Surveys", async () => {
     expect(response.body.length).toBe(2);
   });
 });
-
-// Aula 3: 1:06:25
