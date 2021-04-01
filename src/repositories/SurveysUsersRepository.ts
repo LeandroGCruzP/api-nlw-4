@@ -6,3 +6,5 @@ import { SurveyUser } from "../models/SurveyUser";
 class SurveysUsersRepository extends Repository<SurveyUser> {}
 
 export { SurveysUsersRepository };
+
+// Aula 4: 16:15
