@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getCustomRepository } from "typeorm";
+import { getCustomRepository, RepositoryNotTreeError } from "typeorm";
 
 import { SurveysRepository } from "../repositories/SurveysRepository";
 import { SurveysUsersRepository } from "../repositories/SurveysUsersRepository";
@@ -31,7 +31,15 @@ class SendMailController {
       });
     }
 
-    // Aula 4: 24:32
+    // Save
+    const surveyUser = surveysUsersRepository.create({
+      user_id: userAlreadyExists.id,
+      survey_id,
+    });
+    await surveysUsersRepository.save(surveyUser);
+
+    // Send Email
+    return response.json(surveyUser);
   }
 }
 
