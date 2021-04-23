@@ -1,6 +1,55 @@
 <style>
+  :root {
+    --primary: #1073ac;
+    --background: #fff;
+    --line: #b2d5e7;
+    --text: #727272;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body,
+  input,
+  textarea,
+  button {
+    font: 400 17px "Roboto", sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  label {
+    color: var(--text);
+  }
+
+  span {
+    margin: 0 0 0 5px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .line {
+    margin: 5% 0 5% 0;
+    width: 100%;
+    height: 2px;
+    background: var(--line);
+  }
+
   .container {
     width: 800px;
+    background: var(--background);
+
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,33 +57,300 @@
     align-content: center;
   }
 
+  .header {
+    width: 800px;
+    height: 10vh;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header img {
+    margin-left: 160px;
+    height: 48px;
+    width: 95px;
+  }
+
+  .header a {
+    margin-right: 160px;
+
+    color: var(--background);
+    font-weight: 700;
+    font-size: 16px;
+
+    text-decoration: none;
+
+  }
+
+  .header a:hover {
+    opacity: 0.9;
+  }
+
+  .wrapper {
+    width: 560px;
+  }
+
+  .wrapper .title {
+    display: flex;
+    text-align: center;
+    margin: 17px 0 17px 0;
+
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .wrapper .description {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .wrapper .description .grid-item1 label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  .wrapper .description .grid-item1 label:last-child {
+    margin-bottom: 0;
+  }
+
+  .wrapper .description .grid-item2 img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .question label {
+    display: flex;
+    text-align: center;
+    margin-bottom: 17px;
+  }
+
   .answers {
-    width: 350px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
 
   .value {
-    padding: 10px;
-    margin: 5px;
-    background: #8257e6;
-    color: #FFF;
-    border-radius: 6px;
-    width: 15px;
-    text-align: center;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--background);
+
     text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
   }
 
-  .level {
+  #one {
+    background: #cb0800;
+  }
+
+  #two {
+    background: #de4705;
+  }
+
+  #three {
+    background: #e36b00;
+  }
+
+  #four {
+    background: #ee9304;
+  }
+
+  #five {
+    background: #fbb50c;
+  }
+
+  #six {
+    background: #f4cc06;
+  }
+
+  #seven {
+    background: #c1c007;
+  }
+
+  #eight {
+    background: #98b503;
+  }
+
+  #nine {
+    background: #68a708;
+  }
+
+  #ten {
+    background: #319905;
+  }
+
+
+  .thanks {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
+    padding: 0 10px 3% 10px;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-rows: 110px 15px 40px 70px;
+    grid-gap: 5px;
+    justify-content: center;
+
+    width: 800px;
+    height: 270px;
+    background: var(--primary);
+    margin-bottom: 10px;
+  }
+
+  .footer .grid-item1 {
     display: flex;
-    margin: 10px;
+    justify-content: center;
+  }
+
+  .footer .grid-item1 img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .footer .grid-item2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer .grid-item2 label {
+    color: var(--background);
+  }
+
+  .footer .grid-item3 {
+    width: 150px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 350px;
+    margin: 0 auto;
+
+  }
+
+  .footer .grid-item3 img {
+    height: 25px;
+    width: 25px;
+  }
+
+  .footer .grid-item4 {
+    display: grid;
+    grid-template-rows: 20px 20px;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .footer .grid-item4 label {
+    color: var(--background);
+    font-size: 10px;
+  }
+
+  .footer .grid-item4 label a {
+    color: var(--background);
+    font-weight: 700;
+
+    text-decoration: none;
   }
 </style>
 
 <div class="container">
-  <label>Olá <strong>{{ name }}</strong>! Tudo bem?</label>
+  <div class="header">
+    <img src="../../assets/logo2.png" alt="System Solution">
+
+    <a href="#">Nuestro Sitio Web</a>
+  </div>
+
+  <div class="wrapper">
+    <label class="title">¿Como fue la atención de nuestro servicio?</label>
+
+    <div class="description">
+      <div class="grid-item1">
+        <label>Hola <span>{{ name }}</span>! Como Estas?</label>
+
+        <label>Nosotros siempre deseamos entregar un buen servicio y mejorar cada vez más y para eso queriamos saber
+          como fue la atención y resultado de nuestro servicio.</label>
+
+        <label> No te olvides que nuestro servicio esta siempre dísponible! Entonces cuando nos necesites estaremos
+          siempre listos para poder ayudarte a hacer tus sueños de levantar tu empresa, una realidad.</label>
+      </div>
+
+      <div class="grid-item2">
+        <img src="../../assets/satisfaction.png" alt="">
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="question">
+      <label>Para que sepamos cuál es tu opinión sobre nuestro servicio y que tan problable será que
+        nos recomendarás,
+        dá una nota de 1 al 10 de acuerdo a tu nivel de satisfacción</label>
+    </div>
+
+
+    <div class="answers">
+      <a class="value" id="one" href="">1</a>
+      <a class="value" id="two" href="">2</a>
+      <a class="value" id="three" href="">3</a>
+      <a class="value" id="four" href="">4</a>
+      <a class="value" id="five" href="">5</a>
+      <a class="value" id="six" href="">6</a>
+      <a class="value" id="seven" href="">7</a>
+      <a class="value" id="eight" href="">8</a>
+      <a class="value" id="nine" href="">9</a>
+      <a class="value" id="ten" href="">10</a>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="thanks">
+      <label>Muchas gracias por tu participación! Es muy importante para nosotros.</label>
+      <label>Recuerda que siempre estamos a tu disposición para por si tienes dudas o quieras dar sugestiones para que
+        podamos mejorar nuestra atención y servicio.</label>
+
+      <label>Equipo | <span>S&S</span></label>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="grid-item1">
+      <img src="../../assets/logo.jpg" alt="Logo System Solution">
+    </div>
+    <div class="grid-item2">
+      <label>Siguenos en nuestras redes</label>
+    </div>
+    <div class="grid-item3">
+      <img src="../../assets/instagram.png" alt="Intagram">
+      <img src="../../assets/instagram.png" alt="Intagram">
+      <img src="../../assets/instagram.png" alt="Intagram">
+      <img src="../../assets/instagram.png" alt="Intagram">
+    </div>
+    <div class="grid-item4">
+      <label>Estás recibiendo este mensage porque haces parte de nuestros clientes que se encuestran registrados en
+        nuestra página.</label>
+      <label>Caso no desees recibir más correos como este as click en <a href="#">cancelar cadastro</a></label>
+    </div>
+
+  </div>
+</div>
+
+
+
+{{!-- <div class="container">
+  <label>Olá <strong>{{ name }}</strong>! ...Tudo bem?</label>
 
   <h3>{{ title }}</h3>
   <br />
@@ -63,4 +379,4 @@
 
   <strong>Sua opinião é muito importante para nós</strong>
   <h3>Equipe | <strong>NLW</strong></h3>
-</div>
+</div> --}}
